@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import TableWithFeatures from './DataTable'; // Adjust the path as needed
+
+const columns = [
+  {
+    Header: 'Name',
+    accessor: 'name', // accessor is the "key" in the data
+  },
+  {
+    Header: 'Age',
+    accessor: 'age',
+  },
+  {
+    Header: 'Email',
+    accessor: 'email',
+  },
+  // Add more columns as needed
+];
+
+const data = [
+  { name: 'Alice', age: 28, email: 'alice@example.com' },
+  { name: 'Bob', age: 34, email: 'bob@example.com' },
+  // Add more data as needed
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <TableWithFeatures columns={columns} data={data} />;
 }
 
 export default App;
